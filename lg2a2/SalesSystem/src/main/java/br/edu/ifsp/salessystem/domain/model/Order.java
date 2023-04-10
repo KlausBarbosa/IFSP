@@ -2,23 +2,25 @@ package br.edu.ifsp.salessystem.domain.model;
 
 import br.edu.ifsp.salessystem.domain.model.util.Leitor;
 
+import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public class Pedido {
+@Entity
+public class Order {
     private int idPedido;
     private String cpf;
     private LocalDate dataPedido;
     private double valor;
 
-    public Pedido(int idPedido, String cpf, LocalDate dataPedido, double valor) {
+    public Order(int idPedido, String cpf, LocalDate dataPedido, double valor) {
         this.idPedido = idPedido;
         this.cpf = cpf;
         this.dataPedido = dataPedido;
         this.valor = valor;
     }
 
-    public Pedido(String caminho, int chave, String valorChave) throws Exception {
+    public Order(String caminho, int chave, String valorChave) throws Exception {
         Leitor leitor = new Leitor(caminho, chave, valorChave);
         ArrayList<String> pedidos = leitor.conteudo();
         String pedido = pedidos.get(0);
