@@ -49,6 +49,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [MySQL](https://www.mysql.com/)
 - [Lombok](https://projectlombok.org/)
 - [Swagger / Heroku](https://projectlombok.org/)
+- [Hexagonal Architecture]()
 
 
 ### Status do Projeto
@@ -59,10 +60,12 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Features
 
-- [x] Mapeamento de Entidades
-- [ ] Integração com BD
+- [x] Entities Mapping
+- [ ] DB Creation
+- [ ] DB integration
 - [ ] Calcular comissão
 - [ ] Emissão de Holerite PDF
+- [ ] Hexagonal Architecture
 
 
 ### Autor
