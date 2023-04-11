@@ -10,6 +10,8 @@ import java.util.Arrays;
 
 @Entity
 public class Customer {
+
+    private Long id;
     private String cpf;
     private String nome;
     private Estado estado;

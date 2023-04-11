@@ -22,12 +22,7 @@ public class Vendor {
 
     private Region regionAgent;
 
-
     private void calculateSalesComission() {
         //TODO: Adicionar calculo de comissão seguindo regras impostas
     }
-
-
-
-
 }

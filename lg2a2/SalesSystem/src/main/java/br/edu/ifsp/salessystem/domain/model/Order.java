@@ -1,23 +1,28 @@
 package br.edu.ifsp.salessystem.domain.model;
 
 import br.edu.ifsp.salessystem.domain.model.util.Leitor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import javax.persistence.Entity;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 @Entity
+@Data
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order {
     private int idPedido;
     private String cpf;
     private LocalDate dataPedido;
-    private double valor;
+    private double price;
+    private Product product;
 
-    public Order(int idPedido, String cpf, LocalDate dataPedido, double valor) {
+    public Order(int idPedido, String cpf, LocalDate dataPedido, double price) {
         this.idPedido = idPedido;
         this.cpf = cpf;
         this.dataPedido = dataPedido;
-        this.valor = valor;
+        this.price = price;
     }
 
     public Order(String caminho, int chave, String valorChave) throws Exception {
@@ -32,13 +37,10 @@ public class Order {
         int mes = Integer.parseInt(campoData[1]);
         int ano = Integer.parseInt(campoData[2]);
         this.dataPedido = LocalDate.of(ano,mes,dia);
-        this.valor = Double.parseDouble(campos[3]);
+        this.price = Double.parseDouble(campos[3]);
+        this.product.setId(Long.parseLong(campos[4]));
+
+//        TODO: Armazenar o Order no DB
     }
 
-
-    @Override
-    public String toString() {
-        return "Pedido [idPedido=" + idPedido + ", cpf=" + cpf + ", dataPedido=" + dataPedido + ", valor="
-                + valor + "]";
-    }
 }

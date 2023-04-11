@@ -1,8 +1,11 @@
 package br.edu.ifsp.salessystem.domain.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
+@Data
 public class Region {
 
     @Id
