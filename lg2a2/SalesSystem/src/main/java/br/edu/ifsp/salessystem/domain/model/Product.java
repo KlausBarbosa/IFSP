@@ -1,6 +1,6 @@
 package br.edu.ifsp.salessystem.domain.model;
 
-import br.edu.ifsp.salessystem.domain.model.util.Categoria;
+import br.edu.ifsp.salessystem.domain.model.util.Category;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -18,6 +18,6 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Categoria categoria;
+    private Category category;
 
 }

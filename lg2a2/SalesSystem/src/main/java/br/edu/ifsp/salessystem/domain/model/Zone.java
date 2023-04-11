@@ -1,7 +1,5 @@
 package br.edu.ifsp.salessystem.domain.model;
 
-import ch.qos.logback.core.net.server.Client;
-
 import javax.persistence.*;
 
 public class Zone {
@@ -10,13 +8,15 @@ public class Zone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Region region;
 
     @OneToOne
     private Vendor vendor;
 
-    @OneToMany
+    @OneToMany(mappedBy = "customer")
     private Customer[] customers;
 }

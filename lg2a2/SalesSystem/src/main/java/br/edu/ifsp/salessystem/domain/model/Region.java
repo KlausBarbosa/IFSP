@@ -3,6 +3,7 @@ package br.edu.ifsp.salessystem.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -12,6 +13,7 @@ public class Region {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @OneToMany
@@ -19,4 +21,8 @@ public class Region {
 
     @OneToOne
     private Vendor regionRepresentative;
+
+    @OneToMany
+    private List<State> states;
+
 }

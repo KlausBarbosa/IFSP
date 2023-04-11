@@ -1,25 +1,34 @@
 package br.edu.ifsp.salessystem.domain.model;
 
 import br.edu.ifsp.salessystem.domain.model.util.Leitor;
+import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @Entity
+@Data
 public class Customer {
 
     private Long id;
     private String cpf;
-    private String nome;
-    private Estado estado;
+    private String name;
+    private State state;
+
+    @CreationTimestamp
+    private LocalDate registrationDate;
 
     @ManyToOne
+    @JoinColumn(name = "zone_id")
     private Zone zone;
 
-    private Order[] pedidos;
+    private List<Order> orders;
 
 
     public Customer(String caminho, int chave, String valorChave) throws Exception {
@@ -29,7 +38,7 @@ public class Customer {
         System.out.println(cliente);
         String[] campos = cliente.split(";");
         this.cpf = campos[0];
-        this.nome = campos[1];
+        this.name = campos[1];
 
         String caminhoPedido = "./src/Pedido.txt";
         int chavePedido = 1;
@@ -37,7 +46,7 @@ public class Customer {
         leitor = new Leitor(caminhoPedido, chavePedido, valorChavePedido);
         ArrayList<String> pedidos = leitor.conteudo();
         int qtPedidos = pedidos.size();
-        this.pedidos = new Order[qtPedidos];
+        this.orders = List.of(new Order[qtPedidos]);
         int indicePedido = 0;
         for (String pedidoAux : pedidos) {
             campos = pedidoAux.split(";");
@@ -50,12 +59,8 @@ public class Customer {
             LocalDate dataPedido = LocalDate.of(ano,mes,dia);
             double valor = Double.parseDouble(campos[3]);
             Order pedido = new Order(idPedido,cpf,dataPedido,valor);
-            this.pedidos[indicePedido] = pedido;
+            this.orders.set(indicePedido, pedido);
             indicePedido =+ 1;
         }
-    }
-    @Override
-    public String toString() {
-        return "Cliente [cpf=" + cpf + ", nome=" + nome + ", pedidos=" + Arrays.toString(pedidos) + "]";
     }
 }

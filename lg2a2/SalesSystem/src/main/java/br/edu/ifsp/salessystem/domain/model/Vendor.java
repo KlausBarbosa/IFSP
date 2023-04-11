@@ -13,6 +13,7 @@ public class Vendor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @OneToOne
@@ -22,7 +23,7 @@ public class Vendor {
 
     private Region regionAgent;
 
-    private void calculateSalesComission() {
-        //TODO: Adicionar calculo de comissão seguindo regras impostas
+    private void calculateSalesCommission() {
+        //TODO: Adicionar calculo de comissão seguindo regras impostas (fazer implementação via interface)
     }
 }

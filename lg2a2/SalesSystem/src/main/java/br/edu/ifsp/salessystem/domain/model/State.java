@@ -9,7 +9,7 @@ import javax.validation.constraints.NotBlank;
 
 
 @Entity
-public class Estado {
+public class State {
 
     @NotNull
     @EqualsAndHashCode.Include
@@ -19,5 +19,8 @@ public class Estado {
 
     @NotBlank
     @Column(nullable = false)
-    private String nome;
+    private String name;
+
+    @ManyToOne
+    private Region region;
 }
