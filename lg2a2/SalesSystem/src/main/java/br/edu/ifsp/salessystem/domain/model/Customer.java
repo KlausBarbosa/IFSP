@@ -4,12 +4,12 @@ import br.edu.ifsp.salessystem.domain.model.util.Leitor;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -18,6 +18,8 @@ public class Customer {
 
     private Long id;
     private String cpf;
+
+    @Column(name = "customer_name")
     private String name;
     private State state;
 

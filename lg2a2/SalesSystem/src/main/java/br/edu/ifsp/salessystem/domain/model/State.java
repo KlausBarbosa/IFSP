@@ -18,7 +18,7 @@ public class State {
     private Long id;
 
     @NotBlank
-    @Column(nullable = false)
+    @Column(nullable = false, name = "state_name")
     private String name;
 
     @ManyToOne

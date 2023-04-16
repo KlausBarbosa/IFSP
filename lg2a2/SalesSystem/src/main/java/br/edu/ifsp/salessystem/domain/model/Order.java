@@ -4,7 +4,10 @@ import br.edu.ifsp.salessystem.domain.model.util.Leitor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -13,9 +16,14 @@ import java.util.ArrayList;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order {
     private Long id;
+
+    @Column(name = "customer_cpf")
     private String cpf;
     private LocalDate orderDate;
     private double price;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
     public Order(int idPedido, String cpf, LocalDate dataPedido, double price) {
