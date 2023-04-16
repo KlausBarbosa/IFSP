@@ -77,3 +77,8 @@ foreign key (region_id) references region (id);
 
 alter table vendor add constraint fk_vendor_zone
 foreign key (zone_id) references region (id);
+
+alter table customer add zone_id char(60) not null;
+
+alter table customer add constraint fk_customer_zone
+foreign key (zone_id) references region (id);
