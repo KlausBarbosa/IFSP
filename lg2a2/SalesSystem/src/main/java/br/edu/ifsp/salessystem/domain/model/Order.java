@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-@Entity
+@Entity(name = "customer_order")
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order {

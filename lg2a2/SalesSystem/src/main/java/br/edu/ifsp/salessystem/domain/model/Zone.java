@@ -12,9 +12,11 @@ public class Zone {
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "region_id", nullable = false)
     private Region region;
 
     @OneToOne
+    @JoinColumn(name = "vendor_id", nullable = false)
     private Vendor vendor;
 
     @OneToMany(mappedBy = "customer")

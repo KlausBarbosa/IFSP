@@ -22,5 +22,6 @@ public class State {
     private String name;
 
     @ManyToOne
+    @JoinColumn(name = "region_id", nullable = false)
     private Region region;
 }
