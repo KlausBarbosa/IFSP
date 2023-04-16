@@ -24,8 +24,6 @@ create table customer_order (
   price double not null,
   product_id bigint not null,
 
-
-
   primary key (id),
 
   constraint fk_customer_order_product foreign key (product_id) references product (id)
@@ -36,13 +34,13 @@ create table customer_order (
 create table state (
   id bigint not null auto_increment,
   state_name char(60) not null,
-  region_id bigint not null
+  region_id bigint not null,
 
   primary key (id)
 
 ) engine=InnoDB default charset=utf8;
 
---create region TODO: TEST
+--create region
 create table region (
   id bigint not null auto_increment,
   region_name char(60) not null,
@@ -52,5 +50,30 @@ create table region (
 
 ) engine=InnoDB default charset=utf8;
 
+--create vendor
+create table vendor (
+  id bigint not null auto_increment,
+  zone_id bigint not null,
+  vendo_name char(60) not null,
+  is_region_agent bool default false,
+
+  primary key (id)
+
+) engine=InnoDB default charset=utf8;
+
+--create zone
+create table zone (
+  id bigint not null auto_increment,
+  zone_name char(60) not null,
+  region_id bigint not null,
+  vendor_id bigint not null,
+
+  primary key (id)
+
+) engine=InnoDB default charset=utf8;
+
 alter table state add constraint fk_state_region
 foreign key (region_id) references region (id);
+
+alter table vendor add constraint fk_vendor_zone
+foreign key (zone_id) references region (id);

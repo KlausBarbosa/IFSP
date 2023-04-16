@@ -61,7 +61,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Features
 
 - [x] Entities Mapping
-- [ ] DB Creation
+- [x] DB Creation
 - [ ] DB integration
 - [ ] Calcular comissão
 - [ ] Emissão de Holerite PDF
@@ -78,5 +78,14 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 Feito com ❤️ por Klaus Barbosa 👋🏽 Entre em contato!
 
-[![Linkedin Badge](https://img.shields.io/badge/-KlausBarbosa-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/klaus-barbosa-707b8a185/)](https://www.linkedin.com/in/klaus-barbosa-707b8a185/)
-[![Gmail Badge](https://img.shields.io/badge/-klaus.boliveira@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:klaus.boliveirao@gmail.com)](mailto:klaus.boliveira@gmail.com)
+<div align="center">
+<a href="https://dev.to/klausbarbosa" target="_blank">
+<img src=https://img.shields.io/badge/dev.to-%2308090A.svg?&style=for-the-badge&logo=dev.to&logoColor=white alt=devto style="margin-bottom: 5px;" />
+</a>
+<a href="https://www.linkedin.com/in/klaus-barbosa-707b8a185/" target="_blank">
+<img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
+</a>
+<a href="https://github.com/KlausBarbosa" target="_blank">
+<img src=https://img.shields.io/badge/github-%2324292e.svg?&style=for-the-badge&logo=github&logoColor=white alt=github style="margin-bottom: 5px;" />
+</a>  
+</div>  
