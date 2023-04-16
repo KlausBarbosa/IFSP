@@ -36,10 +36,21 @@ create table customer_order (
 create table state (
   id bigint not null auto_increment,
   state_name char(60) not null,
+  region_id bigint not null
 
   primary key (id)
 
 ) engine=InnoDB default charset=utf8;
 
---
+--create region TODO: TEST
+create table region (
+  id bigint not null auto_increment,
+  region_name char(60) not null,
 
+
+  primary key (id)
+
+) engine=InnoDB default charset=utf8;
+
+alter table state add constraint fk_state_region
+foreign key (region_id) references region (id);
