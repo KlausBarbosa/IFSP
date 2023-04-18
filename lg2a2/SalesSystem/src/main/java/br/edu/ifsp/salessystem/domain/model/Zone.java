@@ -1,5 +1,7 @@
 package br.edu.ifsp.salessystem.domain.model;
 
+import br.edu.ifsp.salessystem.core.service.CustomerService;
+
 import javax.persistence.*;
 
 public class Zone {
@@ -20,5 +22,5 @@ public class Zone {
     private Vendor vendor;
 
     @OneToMany(mappedBy = "customer")
-    private Customer[] customers;
+    private CustomerService[] customers;
 }

@@ -1,4 +1,4 @@
-# ProjectName
+# SalesSystem
 
 [//]: # (## TODO: Badges)
 [//]: # (https://blog.rocketseat.com.br/como-fazer-um-bom-readme/#tecnologias)

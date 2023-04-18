@@ -3,11 +3,9 @@ package br.edu.ifsp.salessystem.domain.model;
 import br.edu.ifsp.salessystem.domain.model.util.Leitor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
@@ -15,10 +13,15 @@ import java.util.ArrayList;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Order {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "customer_cpf")
     private String cpf;
+
+    @CreationTimestamp
     private LocalDate orderDate;
     private double price;
 
