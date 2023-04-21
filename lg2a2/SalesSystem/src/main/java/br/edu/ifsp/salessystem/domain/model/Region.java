@@ -18,6 +18,7 @@ public class Region {
     private String name;
 
     @OneToMany
+    @OrderColumn
     private Zone[] zones;
 
     @OneToOne

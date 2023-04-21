@@ -1,4 +1,4 @@
-package br.edu.ifsp.salessystem.api.request;
+package br.edu.ifsp.salessystem.api.model.request;
 
 import lombok.Getter;
 import lombok.Setter;

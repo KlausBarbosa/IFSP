@@ -1,7 +1,7 @@
 package br.edu.ifsp.salessystem.api.assembler;
 
-import br.edu.ifsp.salessystem.api.request.CustomerRequest;
-import br.edu.ifsp.salessystem.core.service.CustomerService;
+import br.edu.ifsp.salessystem.api.model.request.CustomerRequest;
+import br.edu.ifsp.salessystem.domain.model.Customer;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -12,7 +12,7 @@ public class CustomerRequestDisassembler {
     @Autowired
     private ModelMapper modelMapper;
 
-    public CustomerService toDomainObject(CustomerRequest customerRequest) {
-        return modelMapper.map(customerRequest, CustomerService.class);
+    public Customer toDomainObject(CustomerRequest customerRequest) {
+        return modelMapper.map(customerRequest, Customer.class); //TODO: add mapeamento personalizado
     }
 }

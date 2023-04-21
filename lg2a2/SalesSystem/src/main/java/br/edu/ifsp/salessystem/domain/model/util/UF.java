@@ -1,7 +1,10 @@
 package br.edu.ifsp.salessystem.domain.model.util;
 
-import lombok.AllArgsConstructor;
+import lombok.Getter;
 
+import java.util.Arrays;
+
+@Getter
 public enum UF {
 
     SAO_PAULO("SP", 1L),
@@ -20,5 +23,10 @@ public enum UF {
     UF(String uf, Long id) {
         this.federalUnity = uf;
         this.idZone = id;
+    }
+
+    public static UF findStateUFEnum(String federalUnityRef) {
+        return Arrays.stream(UF.values()).filter(federalUnity -> federalUnity.federalUnity
+                .equals(federalUnityRef)).findFirst().orElseThrow();
     }
 }

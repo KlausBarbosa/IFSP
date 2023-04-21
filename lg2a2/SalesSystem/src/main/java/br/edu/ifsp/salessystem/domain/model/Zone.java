@@ -1,9 +1,11 @@
 package br.edu.ifsp.salessystem.domain.model;
 
-import br.edu.ifsp.salessystem.core.service.CustomerService;
+import lombok.Data;
 
 import javax.persistence.*;
 
+@Entity
+@Data
 public class Zone {
 
     @Id
@@ -22,5 +24,5 @@ public class Zone {
     private Vendor vendor;
 
     @OneToMany(mappedBy = "customer")
-    private CustomerService[] customers;
+    private Customer[] customers;
 }

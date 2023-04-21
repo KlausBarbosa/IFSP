@@ -1,5 +1,6 @@
 package br.edu.ifsp.salessystem.domain.model;
 
+import lombok.Builder;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -10,6 +11,7 @@ import java.time.LocalDate;
 
 @Entity
 @Data
+@Builder
 public class Customer {
 
 
