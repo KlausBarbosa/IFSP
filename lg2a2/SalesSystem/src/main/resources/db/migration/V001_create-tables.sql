@@ -54,7 +54,7 @@ create table region (
 create table vendor (
   id bigint not null auto_increment,
   zone_id bigint not null,
-  vendo_name char(60) not null,
+  vendor_name char(60) not null,
   is_region_agent bool default false,
 
   primary key (id)

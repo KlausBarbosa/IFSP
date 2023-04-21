@@ -20,7 +20,8 @@ Tabela de conteúdos
     * [Combo](#combo)
 * [Tests](#testes)
 * [Requisitos](#requisitos)
-* [Tecnologias](#tecnologias)
+    * [Documento de Requisito](#local-files) 
+* [Tecnologias](#-tecnologias)
 * [Status](#status-do-projeto)
 * [Features](#features)
 * [Autor](#autor)
@@ -62,7 +63,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 - [x] Entities Mapping
 - [x] DB Creation
-- [ ] DB integration
+- [x] DB integration
 - [ ] Calcular comissão
 - [ ] Emissão de Holerite PDF
 - [ ] Hexagonal Architecture
@@ -76,7 +77,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
  <sub><b>Klaus Barbosa</b></sub></a> <a href="https://www.linkedin.com/in/klaus-barbosa-707b8a185/" title="">☕</a>
 
 
-Feito com ❤️ por Klaus Barbosa 👋🏽 Entre em contato!
+Feito com ❤️ por Klaus Barbosa 👋🏼 Entre em contato!
 
 <div align="center">
 <a href="https://dev.to/klausbarbosa" target="_blank">

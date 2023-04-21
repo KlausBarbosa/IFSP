@@ -22,7 +22,8 @@ public class Vendor {
 
     private boolean isRegionAgent;
 
-    private Region regionAgent;
+//
+//    private Region regionAgent; TODO: Adicionar o region Agent Id
 
     private void calculateSalesCommission() {
         //TODO: Adicionar calculo de comissão seguindo regras impostas (fazer implementação via interface)

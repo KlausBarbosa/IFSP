@@ -1,6 +1,7 @@
 package br.edu.ifsp.salessystem.domain.model;
 
 import lombok.Data;
+import org.springframework.core.annotation.Order;
 
 import javax.persistence.*;
 
@@ -12,7 +13,7 @@ public class Zone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "zone_name", nullable = false)
     private String name;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -23,6 +24,6 @@ public class Zone {
     @JoinColumn(name = "vendor_id", nullable = false)
     private Vendor vendor;
 
-    @OneToMany(mappedBy = "customer")
-    private Customer[] customers;
+//    @OneToMany(mappedBy = "customer")
+//    private Customer customer;
 }
