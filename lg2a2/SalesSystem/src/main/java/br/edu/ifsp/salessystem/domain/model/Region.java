@@ -3,6 +3,7 @@ package br.edu.ifsp.salessystem.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -17,12 +18,13 @@ public class Region {
     private String name;
 
     @OneToMany
+    @OrderColumn
     private Zone[] zones;
 
     @OneToOne
     private Vendor regionRepresentative;
 
-    @OneToMany
-    private List<State> states;
+    @OneToMany(mappedBy = "region")
+    private List<State> states = new ArrayList<>();
 
 }

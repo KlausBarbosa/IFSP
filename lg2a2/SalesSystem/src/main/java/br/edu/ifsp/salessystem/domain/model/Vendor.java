@@ -13,10 +13,11 @@ public class Vendor {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "vendor_name")
     private String name;
 
     @OneToOne
+    @JoinColumn(name = "zone_id", nullable = false)
     private Zone vendorZone;
 
     private boolean isRegionAgent;
