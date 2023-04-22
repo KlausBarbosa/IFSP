@@ -2,6 +2,7 @@ package br.edu.ifsp.salessystem.core.service;
 
 import br.edu.ifsp.salessystem.api.model.request.CustomerRequest;
 import br.edu.ifsp.salessystem.core.util.HelperUtil;
+import br.edu.ifsp.salessystem.domain.exception.CustomerNotFoundException;
 import br.edu.ifsp.salessystem.domain.model.Customer;
 import br.edu.ifsp.salessystem.domain.model.Order;
 import br.edu.ifsp.salessystem.domain.model.Zone;
@@ -40,6 +41,11 @@ public class CustomerService {
                 .zone(zone).build();
 
         return customerRepository.save(customer);
+    }
+
+    public Customer findOrFail(Long customerId) {
+        return customerRepository.findById(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException(customerId));
     }
 
 
