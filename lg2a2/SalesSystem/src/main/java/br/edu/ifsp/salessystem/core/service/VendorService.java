@@ -1,8 +1,10 @@
 package br.edu.ifsp.salessystem.core.service;
 
+import br.edu.ifsp.salessystem.api.model.response.VendorResponse;
 import br.edu.ifsp.salessystem.domain.exception.CustomerNotFoundException;
 import br.edu.ifsp.salessystem.domain.model.Vendor;
 import br.edu.ifsp.salessystem.domain.repository.VendorRepository;
+import br.edu.ifsp.salessystem.domain.repository.ZoneRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,9 @@ public class VendorService {
 
     @Autowired
     private VendorRepository vendorRepository;
+
+    @Autowired
+    private ZoneRepository zoneRepository;
 
 //    public Vendor saveVendor(VendorRequest vendorRequest) {
 ////        Long vendorId = helperUtil.findZoneCode(customerRequest.getUf());

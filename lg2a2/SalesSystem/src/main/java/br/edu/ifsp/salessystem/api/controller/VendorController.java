@@ -1,20 +1,34 @@
 package br.edu.ifsp.salessystem.api.controller;
 
+import br.edu.ifsp.salessystem.api.assembler.VendorResponseAssembler;
 import br.edu.ifsp.salessystem.api.model.response.VendorResponse;
+import br.edu.ifsp.salessystem.core.service.VendorService;
+import br.edu.ifsp.salessystem.core.service.ZoneRegisterService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/vendors")
+@RestController
+@RequestMapping(value = "/vendors")
 public class VendorController {
 
+    @Autowired
+    private VendorService vendorService;
+
+    @Autowired
+    private ZoneRegisterService zoneRegisterService;
+
+    @Autowired
+    private VendorResponseAssembler vendorResponseAssembler;
 
 
-    @GetMapping("/{vendorId")
+    @GetMapping("/{vendorId}")
     public VendorResponse findVendor(@PathVariable Long vendorId) {
-        var vendor =
+        var vendor = vendorService.findOrFail(vendorId);
+        var zone = zoneRegisterService.findOrFail(vendor.getVendorZone());
 
-        return null;
+        return vendorResponseAssembler.toResponse(vendor, zone);
     }
-
 }

@@ -8,8 +8,7 @@ import lombok.Setter;
 public class VendorResponse {
 
     public Long id;
-    public Long zoneId;
-    public String vendorName;
-    public boolean isRegionAgent;
-
+    public String name;
+    public boolean regionAgent;
+    public ZoneVendorResponse zoneVendor;
 }
