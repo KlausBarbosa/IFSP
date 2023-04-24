@@ -9,13 +9,6 @@ create table customer (
   primary key (id)
 ) engine=InnoDB default charset=utf8;
 
---Product create
-create table product (
-  id bigint not null auto_increment,
-
-  primary key (id)
-) engine=InnoDB default charset=utf8;
-
 --order create
 create table customer_order (
   id bigint not null auto_increment,
@@ -23,10 +16,10 @@ create table customer_order (
   order_date datetime not null,
   price double not null,
   product_id bigint not null,
+  zone_id bigint not null,
 
-  primary key (id),
 
-  constraint fk_customer_order_product foreign key (product_id) references product (id)
+  primary key (id)
 
 ) engine=InnoDB default charset=utf8;
 

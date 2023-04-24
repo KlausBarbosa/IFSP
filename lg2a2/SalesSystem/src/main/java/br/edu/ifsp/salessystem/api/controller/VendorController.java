@@ -1,6 +1,7 @@
 package br.edu.ifsp.salessystem.api.controller;
 
 import br.edu.ifsp.salessystem.api.assembler.VendorResponseAssembler;
+import br.edu.ifsp.salessystem.api.model.response.VendorComissionResponse;
 import br.edu.ifsp.salessystem.api.model.response.VendorResponse;
 import br.edu.ifsp.salessystem.core.service.VendorService;
 import br.edu.ifsp.salessystem.core.service.ZoneRegisterService;
@@ -30,5 +31,15 @@ public class VendorController {
         var zone = zoneRegisterService.findOrFail(vendor.getVendorZone());
 
         return vendorResponseAssembler.toResponse(vendor, zone);
+    }
+
+    @GetMapping("/{vendorId}/calculate-comission")
+    public VendorComissionResponse calculateSalesComission(@PathVariable Long vendorId) {
+
+        var vendor = vendorService.findOrFail(vendorId);
+        var zone = zoneRegisterService.findOrFail(vendor.getVendorZone());
+
+//        return vendorResponseAssembler.toResponse(vendor, zone);
+        return null;
     }
 }
