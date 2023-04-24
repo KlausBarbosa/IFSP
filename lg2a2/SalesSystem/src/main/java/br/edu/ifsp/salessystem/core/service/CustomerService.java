@@ -2,18 +2,13 @@ package br.edu.ifsp.salessystem.core.service;
 
 import br.edu.ifsp.salessystem.api.model.request.CustomerRequest;
 import br.edu.ifsp.salessystem.core.util.HelperUtil;
+import br.edu.ifsp.salessystem.domain.exception.CustomerNotFoundException;
 import br.edu.ifsp.salessystem.domain.model.Customer;
-import br.edu.ifsp.salessystem.domain.model.Order;
 import br.edu.ifsp.salessystem.domain.model.Zone;
-import br.edu.ifsp.salessystem.domain.model.util.Leitor;
 import br.edu.ifsp.salessystem.domain.repository.CustomerRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @Data
@@ -40,6 +35,11 @@ public class CustomerService {
                 .zone(zone).build();
 
         return customerRepository.save(customer);
+    }
+
+    public Customer findOrFail(Long customerId) {
+        return customerRepository.findById(customerId)
+                .orElseThrow(() -> new CustomerNotFoundException(customerId));
     }
 
 

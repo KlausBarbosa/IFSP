@@ -4,7 +4,7 @@ import br.edu.ifsp.salessystem.domain.model.Zone;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -13,7 +13,7 @@ public class CustomerResponse {
     public Long id;
     private String name;
     private String cpf;
-    private LocalDate registrationDate;
+    private LocalDateTime registrationDate;
     private Zone zone;
 
 
