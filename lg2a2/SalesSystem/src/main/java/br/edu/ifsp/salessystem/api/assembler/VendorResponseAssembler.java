@@ -1,5 +1,6 @@
 package br.edu.ifsp.salessystem.api.assembler;
 
+import br.edu.ifsp.salessystem.api.model.response.VendorComissionResponse;
 import br.edu.ifsp.salessystem.api.model.response.VendorResponse;
 import br.edu.ifsp.salessystem.api.model.response.ZoneVendorResponse;
 import br.edu.ifsp.salessystem.domain.model.Vendor;
@@ -20,7 +21,11 @@ public class VendorResponseAssembler {
                 .id(zone.getId())
                 .name(zone.getName()).build();
         vendorResponse.setZoneVendor(zoneResponse);
-
+        return vendorResponse;
+    }
+    public VendorComissionResponse toResponseWithComission(Vendor vendorEntity, double comission) {
+        var vendorResponse = modelMapper.map(vendorEntity, VendorComissionResponse.class);
+        vendorResponse.setTotalMonthlyComission(comission);
         return vendorResponse;
     }
 }

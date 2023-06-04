@@ -23,9 +23,8 @@ public class Zone {
     @Column(name = "zone_name", nullable = false)
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "region_id", nullable = false)
-    private Region region;
+    @Column(name = "region_id", nullable = false)
+    private Long region;
 
 //    @JoinColumn(name = "vendor_id", nullable = false)
     @JsonIgnore
