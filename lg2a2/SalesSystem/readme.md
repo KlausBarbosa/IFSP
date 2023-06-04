@@ -47,7 +47,9 @@ O usuário irá informar o UF em que mora, e automaticamente será atrelado à u
   * Caso exista vendas dentro do mês, é verificado qual categoria do produto vendido para pegar o %(percentual de comissão) e realizado um cálculo do percentual da categoria x valor do produto vendido;
   * Caso o vendedor também seja representante de vendas REGIONAL, será verificado cada zona de venda atrelada à Região para a busca de produtos vendidos no mês;
 
-
+* Cosméticos possuem 30% de comissão;
+* Eletrônicos possuem 10% de comissão;
+* Decorações possuem 5% de comissão;
 
 
 ### 🛠 Tecnologias
