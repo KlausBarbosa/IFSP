@@ -80,7 +80,12 @@ public class VendorService {
                     order.getOrderDate().getMonth() == LocalDate.now().getMonth()).collect(Collectors.toList());
         }
         //calcula o valor de comissão com base nas ordens de venda passadas
-        return calculateTotalComission(ordersByZone);
+        var comissions = calculateTotalComission(ordersByZone);
+        if (!newCustomers.isEmpty()) {
+            comissions += newCustomers.size() * 10;
+        }
+
+        return comissions;
     }
 
     private double calculateTotalComission(List<CustomerOrder> orders) {

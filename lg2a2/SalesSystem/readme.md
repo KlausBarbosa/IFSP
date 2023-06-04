@@ -41,11 +41,11 @@ O contexto utilizado para localização de vendas e cadastro é: Região (Estado
 O usuário irá informar o UF em que mora, e automaticamente será atrelado à uma zona e uma região no seu cadastro;
 
 
-* para cada novo usuário no mês a empresa pagará 50 reais;
+* para cada novo usuário no mês a empresa pagará 10 reais;
 * O cálculo de comissão irá considerar a zona de vendas onde o vendedor é representante;
   * Se houver vendas na zona de vendas atrelada ao vendedor, será verificado se a venda foi realizada dentro do mês
   * Caso exista vendas dentro do mês, é verificado qual categoria do produto vendido para pegar o %(percentual de comissão) e realizado um cálculo do percentual da categoria x valor do produto vendido;
-    *Caso o vendedor também seja representante de vendas REGIONAL, será verificado cada zona de venda atrelada à Região para a busca de produtos vendidos no mês;
+  * Caso o vendedor também seja representante de vendas REGIONAL, será verificado cada zona de venda atrelada à Região para a busca de produtos vendidos no mês;
 
 
 
