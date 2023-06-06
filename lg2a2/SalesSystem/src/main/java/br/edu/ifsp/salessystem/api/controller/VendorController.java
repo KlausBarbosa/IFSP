@@ -36,10 +36,13 @@ public class VendorController {
     @GetMapping("/{vendorId}/calculate-comission")
     public VendorComissionResponse calculateSalesComission(@PathVariable Long vendorId) {
 
-        var vendor = vendorService.findOrFail(vendorId);
-        var zone = zoneRegisterService.findOrFail(vendor.getVendorZone());
-
-//        return vendorResponseAssembler.toResponse(vendor, zone);
-        return null;
+        try {
+            var vendor = vendorService.findOrFail(vendorId);
+            var comissionCalculated = vendorService.calculateSalesComission(vendor);
+            var vendorResponse =  vendorResponseAssembler.toResponseWithComission(vendor, comissionCalculated);
+            return vendorResponse;
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }

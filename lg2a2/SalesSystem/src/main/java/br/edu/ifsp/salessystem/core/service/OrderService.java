@@ -2,7 +2,7 @@ package br.edu.ifsp.salessystem.core.service;
 
 import br.edu.ifsp.salessystem.api.model.request.OrderRequest;
 import br.edu.ifsp.salessystem.domain.exception.CustomerNotFoundException;
-import br.edu.ifsp.salessystem.domain.model.Order;
+import br.edu.ifsp.salessystem.domain.model.CustomerOrder;
 import br.edu.ifsp.salessystem.domain.repository.CustomerRepository;
 import br.edu.ifsp.salessystem.domain.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +17,8 @@ public class OrderService {
     @Autowired
     private CustomerRepository customerRepository;
 
-
-    public Order saveOrder(OrderRequest orderRequest) {
-        Order order = Order.builder()
+    public CustomerOrder saveOrder(OrderRequest orderRequest) {
+        CustomerOrder order = CustomerOrder.builder()
                 .cpf(orderRequest.getCpf())
                 .orderDate(orderRequest.getOrderDate())
                 .price(orderRequest.getPrice())

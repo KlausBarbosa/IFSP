@@ -1,8 +1,6 @@
 package br.edu.ifsp.salessystem.domain.model;
 
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -11,7 +9,9 @@ import java.time.LocalDate;
 @Data
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Builder
-public class Order {
+@AllArgsConstructor
+@NoArgsConstructor
+public class CustomerOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,6 +27,7 @@ public class Order {
     private Long productId;
 
     private Long zoneId;
+
 
 //    public Order(int idPedido, String cpf, LocalDate dataPedido, double price) {
 //        this.id = (long) idPedido;

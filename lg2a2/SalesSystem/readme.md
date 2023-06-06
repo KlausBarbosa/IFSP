@@ -15,7 +15,7 @@ Tabela de conteúdos
 * [Como usar](#como-usar)
     * [Pre Requisitos](#pre-requisitos)
     * [Local files](#local-files)
-    * [Remote files](#remote-files)
+    * [Manual do Usuario](#user-manual)
     * [Multiple files](#multiple-files)
     * [Combo](#combo)
 * [Tests](#testes)
@@ -35,9 +35,21 @@ Tabela de conteúdos
 
 
 
+### User Manual
+Manual do Usuário - Regras para Cálculo de Comissão:
+O contexto utilizado para localização de vendas e cadastro é: Região (Estado) e Zona (Cidade);
+O usuário irá informar o UF em que mora, e automaticamente será atrelado à uma zona e uma região no seu cadastro;
 
 
+* para cada novo usuário no mês a empresa pagará 10 reais;
+* O cálculo de comissão irá considerar a zona de vendas onde o vendedor é representante;
+  * Se houver vendas na zona de vendas atrelada ao vendedor, será verificado se a venda foi realizada dentro do mês
+  * Caso exista vendas dentro do mês, é verificado qual categoria do produto vendido para pegar o %(percentual de comissão) e realizado um cálculo do percentual da categoria x valor do produto vendido;
+  * Caso o vendedor também seja representante de vendas REGIONAL, será verificado cada zona de venda atrelada à Região para a busca de produtos vendidos no mês;
 
+* Cosméticos possuem 30% de comissão;
+* Eletrônicos possuem 10% de comissão;
+* Decorações possuem 5% de comissão;
 
 
 ### 🛠 Tecnologias
@@ -50,7 +62,6 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [MySQL](https://www.mysql.com/)
 - [Lombok](https://projectlombok.org/)
 - [Swagger / Heroku](https://projectlombok.org/)
-- [Hexagonal Architecture]()
 
 
 ### Status do Projeto
@@ -64,9 +75,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [x] Entities Mapping
 - [x] DB Creation
 - [x] DB integration
-- [ ] Calcular comissão
+- [x] Calcular comissão
 - [ ] Emissão de Holerite PDF
-- [ ] Hexagonal Architecture
 
 
 ### Autor
